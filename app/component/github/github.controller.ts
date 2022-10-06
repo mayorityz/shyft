@@ -1,7 +1,8 @@
 import { Request, Response } from "express";
 import { Octokit } from "octokit";
+import  "dotenv";
 
-const octokit = new Octokit({ auth: `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` });
+const octokit = new Octokit({ auth: process.env.github_token });
   
 export const RepoDetails = async(req :Request , res:Response)=>{
     // ! todo
