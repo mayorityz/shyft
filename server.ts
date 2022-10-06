@@ -1,4 +1,5 @@
 import express from 'express'
+import CsvRoute from './app/component/csv/csv.route';
 import GithubRoute from './app/component/github/github.route';
 
 const app = express()
@@ -17,6 +18,7 @@ app.use((req, res, next) => {
 })
 
 app.use("/github", GithubRoute())
+app.use("/csv", CsvRoute())
 
 try {
   app.listen(PORT, () => {

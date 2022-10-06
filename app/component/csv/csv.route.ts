@@ -1,11 +1,11 @@
 import { Router } from "express";
-import { RepoDetails } from "./github.controller";
+import { FetchFromFile } from "./csv.controller";
 
-const GithubRoute = () => {
+const CsvRoute = () => {
     const router = Router();
-    router.get("/read-repo/:org/:repo", RepoDetails);
+    router.get("/read-csv/:keyword", FetchFromFile);
 
     return router
 }
 
-export default GithubRoute
+export default CsvRoute
